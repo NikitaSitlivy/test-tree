@@ -1,0 +1,105 @@
+.main
+	overflow: hidden
+
+.folders-block
+	margin-top: 10px
+	display: flex
+	flex-direction: column
+	position: relative
+	&__item
+		position: relative
+	.folders-block__item:nth-of-type(1)
+		margin-left: 23px
+	&__first-level
+		position: relative
+		line-height: 1
+		.folders-block__item
+			margin: 10px 0 0px 40px
+
+	&__second-level
+		margin: 0 0 0 26px
+		position: relative
+		line-height: 1
+		.folders-block__item
+			margin: 0 0 10px 40px
+
+	&__img
+		margin-right: 3px
+		width: 15px
+		height: 15px
+	&__first-level-folder,&__second-level-folder
+		margin-bottom: 10px
+		display: flex
+	&_file
+		&__item
+			margin-top: 0px
+	&__show
+		border: 1px solid black
+		width: 11px
+		height: 11px
+		position: relative
+		margin-right: 10px
+		background-color: white
+		z-index: 2
+		cursor: pointer
+	&__show-icon
+		position: absolute
+		display: block
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+.folders-block::before,.folders-block__second-level::before,
+.folders-block__first-level::before,.folders-block__second-level .folders-block__item::before,
+.folders-block__first-level .folders-block__item::before,.folders-block__item::before,
+.folders-block__show::before
+	content: ""
+	z-index: 1
+	position: absolute
+.folders-block::before
+	width:0px
+	height: 102%
+	top: 10px
+	left: 6px
+	border-left: 1px dashed gray
+.folders-block__second-level::before
+	width:0px
+	height: calc(100% - 26px)
+	top: 15px
+	left: 32px
+	border-left: 1px dashed gray
+.folders-block__first-level::before
+	width:0px
+	height: calc(100% - 27px)
+	top: 16px
+	left: 32px
+	border-left: 1px dashed gray
+.folders-block_file::before
+	display: none
+.folders-block__second-level .folders-block__item::before
+	width:20px
+	height: 7px
+	top: 0px
+	left: -7px
+	border-bottom: 1px dashed gray
+.folders-block__first-level .folders-block__item::before
+	width:7px
+	height: 7px
+	top: 0px
+	left: -7px
+	border-bottom: 1px dashed gray
+
+.folders-block__item::before
+	width:15px
+	height: 7px
+	top: 0px
+	left: -15px
+	border-bottom: 1px dashed gray
+.folders-block__show::before
+	width:10px
+	height: 7px
+	top: -2px
+	left: 12px
+	border-bottom: 1px dashed gray
+
+
+
